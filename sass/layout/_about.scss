@@ -1,0 +1,42 @@
+@use "global-rules" as *;
+
+.about {
+    .container {
+        .text {
+            text-align: center;
+            padding: 24px 0 64px;
+        }   
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(275px,  1fr));
+            gap: 16px;
+            .card {
+                padding: 16px;
+                border-radius: $border-big;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                h2 {
+                    padding-bottom: 12px;
+                }
+                img {
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .about .container .cards .card:last-child {
+        padding-top: 12px;
+        text-align: center;
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .about .container .cards .card:last-child {
+        padding-top: 12px;
+        text-align: left;
+        grid-column: span 1;
+    }
+}

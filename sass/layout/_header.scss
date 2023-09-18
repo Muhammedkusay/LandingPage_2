@@ -1,0 +1,93 @@
+@use "global-rules" as *;
+
+header {
+    box-shadow: 0px 2px 15px 2px #3a3a3a;
+    z-index: 200;
+    .container {
+        height: 80px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            font-size: 1.9em;
+            font-weight: 500;
+            span {
+
+                color: $main-clr;
+            }
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+            li a {
+                padding: 6px 12px;
+                color: $second-clr;
+                transition: all .2s;
+                border-radius: $border-small;
+                text-decoration: none;
+            }
+            li a:hover {
+                color: #fff;
+                background-color: $main-clr;
+            }
+        }
+        .menu {
+
+            display: none;
+    
+            .bar {
+                width: 24px;
+                height: 2px;
+                margin-bottom: 6px;
+                transition: all .25s;
+                background-color: $second-clr;
+            }
+    
+            &.active {
+                .bar:first-child {
+                    transform: rotate(45deg) translate(6px, 6px);
+                }
+                .bar:nth-child(2) {
+                    display: none;
+                }
+                .bar:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    header .container .logo {
+        font-size: 1.5em;
+    }
+    header ul {
+        padding: 16px 0;
+        transition: all .2s;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        transform: translateX(-100%);
+        background-color: $second-clr;
+    }
+    header ul.active {
+        transform: translateX(0%);
+    }
+    header .container ul li {
+        margin: 10px 0;
+    }
+    header .container ul li a{
+        color: #fff;
+        padding: 12px 64px;
+    }
+    header .container .menu {
+        display: block;
+    }
+}

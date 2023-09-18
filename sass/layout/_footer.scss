@@ -1,0 +1,13 @@
+@use "global-rules" as *;
+
+.footer {
+    padding: 16px 0;
+    margin-top: 64px;
+    background-image: linear-gradient(45deg, rgb(33, 33, 159), rgb(8, 8, 255));
+    h2, p {
+        color: #fff;
+        width: fit-content;
+        margin: 0 auto;
+        padding-bottom: 12px;
+    }
+}

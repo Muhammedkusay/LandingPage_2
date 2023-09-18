@@ -1,0 +1,54 @@
+@use "global-rules"  as *;
+
+.hero {
+    background-color: #eee;
+    .container {
+        display: flex;
+        align-items: center;
+    }
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        h2 {
+            font-size: 1.9em;
+            font-weight: 600;
+            span {
+                color: $main-clr;
+            }
+        }
+        .links a:first-child {
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 18px;
+            margin-right: 8px;
+            background-color: $main-clr;
+            border-radius: $border-small; 
+        }
+        .links a:last-child {
+            color: $main-clr;
+            text-decoration: none;
+            padding: 6px 18px;
+            margin-right: 18px;
+            border: 1px solid $main-clr;
+            border-radius: $border-small; 
+        }
+    }
+    img {
+        width: 40%;
+        padding-top: 45px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .hero .container {
+        flex-direction: column;
+    }
+    .hero .container .text {
+        padding-top: 50px;
+    }
+    .hero .container img {
+        width: 90%;
+    }
+}

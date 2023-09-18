@@ -1,0 +1,62 @@
+@use "global-rules" as *;
+
+.contact {
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 50px;
+        img {
+            width: 50%;
+        }
+        form {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            input, textarea {
+                padding: 6px;
+                border-radius: $border-small;
+                outline-width: 0;
+                border-width: 0;
+                border: 1px solid #d7d7d7;
+                margin-bottom: 12px;
+            }
+            textarea {
+                height: 150px;
+                resize: vertical
+            }
+            input:focus {
+                outline-color: $main-clr;
+                outline-width: 3px;
+            }
+            textarea:focus {
+                outline-color: $main-clr;
+                outline-width: 3px;
+            }
+            a {
+                color: #fff;
+                padding: 6px 18px;
+                width: fit-content;
+                text-decoration: none;
+                border-radius: $border-small;
+                background-color: $main-clr;
+            }
+            a:hover {
+                background-color: rgb(3, 0, 187);
+            } 
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contact .container {
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    .contact .container form {
+        width: 100%;
+    }
+    .contact .container img {
+        width: 100%;
+    }
+}
